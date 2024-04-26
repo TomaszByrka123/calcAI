@@ -10,8 +10,10 @@
             <div class="h-100 p-5 custom-bg-color rounded-3">
                 <h2>Konto</h2>
                 <p class="no-margin"><strong>Email:</strong> {{ current_user.email }}</p>
-                <p class="no-margin"><strong>Data utworzenia:</strong> {{
-                    current_user.registered_on.strftime("%d.%m.%Y") }}</p>
+                <p class="no-margin"><strong>Data utworzenia:</strong> {{ current_user.registered_on.strftime("%d.%m.%Y") }}</p>
+                <a class="btn btn-light" href="{{ url_for('users.logout') }}" role="button">
+                    Wyloguj
+                </a>
             </div>
         </div>
     </div>

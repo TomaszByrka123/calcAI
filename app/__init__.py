@@ -77,10 +77,27 @@ def helper_cli(app):
 
     @app.cli.command('basic_user')
     def add_simple_users():
-        from .models import User
+        from .models import User, Course, User_Course
         user1 = User(email='tomasz.byrka@alogliwice.polsl.pl', password='tomasz123', username='tombyq0')
         user2 = User(email='ktos.tam@alogliwice.polsl.pl', password='ktostam123', username='ktostam')
         db.session.add(user1)
         db.session.add(user2)
         db.session.commit()
         app.logger.info('Dodano testowych userow')
+
+
+        course1 = Course(name='Kurs Pythona', description='Podstawy programowania w Pythonie')
+        course2 = Course(name='Kurs JavaScript', description='Nauka programowania w JavaScript')
+        db.session.add(course1)
+        db.session.add(course2)
+        db.session.commit()
+        app.logger.info('Dodano testowe kursy')
+
+        user_course1 = User_Course(user_id=user1.id, course_id=course1.id, percent=0.0)
+        user_course2 = User_Course(user_id=user1.id, course_id=course2.id, percent=0.0)
+        user_course3 = User_Course(user_id=user2.id, course_id=course1.id, percent=0.0)
+        db.session.add(user_course1)
+        db.session.add(user_course2)
+        db.session.add(user_course3)
+        db.session.commit()
+        app.logger.info('polaczono kursy z uzytkownikami')

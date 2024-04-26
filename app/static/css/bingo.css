@@ -1,0 +1,44 @@
+.bingo-table {
+    margin: 20px auto;
+    border-spacing: 10px;
+    border-collapse: collapse;
+}
+
+.bingo-tr {
+    text-align: center;
+    border: 2px solid;
+    padding: 10px;
+    height: 100px;
+}
+
+.bingo-td {
+    text-align: center;
+    border: 2px solid;
+    padding: 10px;
+    width: 200px;
+}
+
+.div-reloader {
+    width: 650px;
+    text-align: left;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px orangered;
+
+}
+
+.btn-reloader {
+    background: none !important;
+    color: inherit;
+    cursor: pointer;
+}
+
+.div2-reloader {
+    width: 650px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.row-eq-height {
+    height: 120px;
+}
+

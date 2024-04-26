@@ -1,11 +1,9 @@
 import sqlalchemy as sa
-from flask import (current_app, flash, redirect, render_template, request,
-                   url_for)
+from flask import (current_app, flash, redirect, render_template, request, url_for)
 from flask_login import current_user, login_required, login_user, logout_user
 
-
 from app import db
-from app.models import User, User_Course
+from app.models import User, Course, User_Course
 from . import users_blueprint
 from .forms import LoginForm, RegisterForm
 
@@ -67,4 +65,5 @@ def profile():
 @users_blueprint.route('/mainPage', methods=['GET', 'POST'])
 @login_required
 def mainPage():
-    return render_template('mainPage.html', user=current_user)
+    user_courses = User_Course.query.filter_by(user_id=current_user.id).all()
+    return render_template('mainPage.html', user=current_user, user_courses=user_courses)
