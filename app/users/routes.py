@@ -66,4 +66,7 @@ def profile():
 @login_required
 def mainPage():
     user_courses = User_Course.query.filter_by(user_id=current_user.id).all()
-    return render_template('mainPage.html', user=current_user, user_courses=user_courses)
+    user_course_id = [uc.course_id for uc in user_courses]
+    all_courses = Course.query.filter(Course.id.notin_(user_course_id)).all()
+
+    return render_template('mainPage.html', user=current_user, user_courses=user_courses, all_courses=all_courses)

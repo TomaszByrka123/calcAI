@@ -63,7 +63,7 @@ class User_Course(db.Model):
     #userzy wpisani do kursów
     course = db.relationship('Course', backref=db.backref('user_courses', cascade='all, delete-orphan'))
 
-    def __init__(self, user_id, course_id):
+    def __init__(self, user_id, course_id, percent):
         self.user_id = user_id
         self.course_id = course_id
         self.percent = 0

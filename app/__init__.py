@@ -21,9 +21,11 @@ def create_app():
 
     from app.recipes import recipes_blueprint
     from app.users import users_blueprint
+    from app.courses import course_blueprint
 
     app.register_blueprint(recipes_blueprint)
     app.register_blueprint(users_blueprint)
+    app.register_blueprint(course_blueprint)
 
     extentions(app)
     #logging(app)
@@ -88,8 +90,12 @@ def helper_cli(app):
 
         course1 = Course(name='Kurs Pythona', description='Podstawy programowania w Pythonie')
         course2 = Course(name='Kurs JavaScript', description='Nauka programowania w JavaScript')
+        course3 = Course(name='Kurs html', description='Nauka programowania w HTML')
+        course4 = Course(name='Kurs C++', description='Nauka programowania w C++')
         db.session.add(course1)
         db.session.add(course2)
+        db.session.add(course3)
+        db.session.add(course4)
         db.session.commit()
         app.logger.info('Dodano testowe kursy')
 

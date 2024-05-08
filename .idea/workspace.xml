@@ -4,29 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93206eb8-20f7-4f33-ae60-5d382680b5c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/courses/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/courses/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/courses/templates/course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/courses/templates/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/css/bingo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/img/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/js/bingo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/js/customTranslation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/js/customTranslationPL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/js/login.js" afterDir="false" />
+    <list default="true" id="93206eb8-20f7-4f33-ae60-5d382680b5c2" name="Changes" comment="dodanie zapisu kursów do użytkowników">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/courses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/courses/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/courses/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/courses/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/courses/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/courses/templates/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/instance/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/instance/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/recipes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/recipes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/users/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/users/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/users/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/users/templates/mainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/users/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/users/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,8 +76,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -110,11 +97,28 @@
       <workItem from="1713689385022" duration="2000" />
       <workItem from="1713801611223" duration="4140000" />
       <workItem from="1713883661044" duration="2560000" />
-      <workItem from="1714115101700" duration="187000" />
+      <workItem from="1714115101700" duration="971000" />
+      <workItem from="1714319263004" duration="3587000" />
+      <workItem from="1714331182090" duration="2488000" />
+      <workItem from="1715007820437" duration="5658000" />
+      <workItem from="1715156343768" duration="13000" />
     </task>
+    <task id="LOCAL-00001" summary="dodanie zapisu kursów do użytkowników">
+      <option name="closed" value="true" />
+      <created>1714115369631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714115369631</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dodanie zapisu kursów do użytkowników" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie zapisu kursów do użytkowników" />
   </component>
 </project>

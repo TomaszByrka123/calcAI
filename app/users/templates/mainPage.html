@@ -8,7 +8,7 @@
                 {% for user_course in user_courses %}
                     <div class="col">
                         <!-- Kafel Bootstrap -->
-                        <a href="{{ url_for('users.profile') }}" class="card tile text-decoration-none text-dark">
+                        <a href="{{ url_for('courses.detail', course_id=user_course.course.id) }}" class="card tile text-decoration-none text-dark">
                             <!-- Obrazek -->
                             <img src="https://via.placeholder.com/300" class="card-img-top" alt="Obrazek">
                             <div class="card-body">
@@ -21,7 +21,27 @@
                 {% endfor %}
             </div>
         </div>
-</div>
+
+        <div class="h-100 p-5 custom-bg-color rounded-3 overflow-hidden">
+            <h2>Wszystkie kursy</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 flex-nowrap" id="course-propos-carousel">
+                {% for one_course in all_courses %}
+                    <div class="col">
+                        <!-- Kafel Bootstrap -->
+                        <a href="{{ url_for('courses.detail', course_id=one_course.id) }}" class="card tile text-decoration-none text-dark">
+                            <!-- Obrazek -->
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Obrazek">
+                            <div class="card-body">
+                                <!-- Opis -->
+                                <h5 class="card-title">{{ one_course.name }}</h5>
+                                <p class="card-text">{{ one_course.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
 </main>
 {% endblock %}
 
