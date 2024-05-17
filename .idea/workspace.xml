@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93206eb8-20f7-4f33-ae60-5d382680b5c2" name="Changes" comment="dodanie zapisu kursów do użytkowników">
+    <list default="true" id="93206eb8-20f7-4f33-ae60-5d382680b5c2" name="Changes" comment="aktualizacja">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/courses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/courses/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/courses/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/courses/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/courses/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/courses/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/instance/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/instance/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/users/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/users/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/users/templates/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/users/templates/mainPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +96,12 @@
       <workItem from="1714331182090" duration="2488000" />
       <workItem from="1715007820437" duration="5658000" />
       <workItem from="1715156343768" duration="13000" />
+      <workItem from="1715166718787" duration="1996000" />
+      <workItem from="1715260778344" duration="2617000" />
+      <workItem from="1715278326290" duration="1380000" />
+      <workItem from="1715281101541" duration="2000" />
+      <workItem from="1715524220856" duration="2567000" />
+      <workItem from="1715625701121" duration="776000" />
     </task>
     <task id="LOCAL-00001" summary="dodanie zapisu kursów do użytkowników">
       <option name="closed" value="true" />
@@ -111,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714115369631</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="aktualizacja">
+      <option name="closed" value="true" />
+      <created>1715166869197</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715166869197</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dodanie zapisu kursów do użytkowników" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodanie zapisu kursów do użytkowników" />
+    <MESSAGE value="aktualizacja" />
+    <option name="LAST_COMMIT_MESSAGE" value="aktualizacja" />
   </component>
 </project>

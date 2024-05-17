@@ -107,3 +107,7 @@ def helper_cli(app):
         db.session.add(user_course3)
         db.session.commit()
         app.logger.info('polaczono kursy z uzytkownikami')
+
+    @app.cli.command('basic_course')
+    def basic_course():
+        pass
