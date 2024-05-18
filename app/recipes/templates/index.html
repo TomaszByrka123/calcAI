@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img class="d-block mx-lg-auto img-fluid" loading="lazy"
+                     src="{{ url_for('static', filename='img/logo.png',  _external=True) }}"
+                     alt="Silesian Phoenix Official Logo">
+            </div>
+
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Silesian Phoenix </h1>
+                <p class="lead text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt necessitatibus possimus
+                    repellendus veritatis! A alias et eum illo labore, neque nostrum odio odit quam sequi sunt totam
+                    vero vitae voluptates.
+                </p>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
+                <a class="btn btn-primary btn-lg px-4 me-md-2" href="{{ url_for('users.login') }}" type="button">Logowanie</a>
+                <a class="btn btn-outline-secondary btn-lg px-4" href="{{ url_for('users.register') }}" type="button">Rejestracja</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
