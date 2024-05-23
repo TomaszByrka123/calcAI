@@ -22,10 +22,12 @@ def create_app():
     from app.recipes import recipes_blueprint
     from app.users import users_blueprint
     from app.courses import course_blueprint
+    from app.slides import slides_blueprint
 
     app.register_blueprint(recipes_blueprint)
     app.register_blueprint(users_blueprint)
     app.register_blueprint(course_blueprint)
+    app.register_blueprint(slides_blueprint)
 
     extentions(app)
     #logging(app)
@@ -87,11 +89,12 @@ def helper_cli(app):
         db.session.commit()
         app.logger.info('Dodano testowych userow')
 
-
-        course1 = Course(name='Kurs Pythona', description='Podstawy programowania w Pythonie')
-        course2 = Course(name='Kurs JavaScript', description='Nauka programowania w JavaScript')
-        course3 = Course(name='Kurs html', description='Nauka programowania w HTML')
-        course4 = Course(name='Kurs C++', description='Nauka programowania w C++')
+        #TU MUSIMY DODAC WSZYSTKIE KURSY KTÓRE DODAMY DO TEMPLATES W SLIDES I OKRESLIC KTORE SA DO JAKICH KURSÓW
+        #TRZEBA DOROBIĆ JESZCZE PODZIAŁ NA LEKCJE
+        course1 = Course(name='Kurs Pythona', description='Podstawy programowania w Pythonie', first_slide=0, last_slide=10)
+        course2 = Course(name='Kurs JavaScript', description='Nauka programowania w JavaScript', first_slide=11, last_slide=20)
+        course3 = Course(name='Kurs html', description='Nauka programowania w HTML', first_slide=21, last_slide=30)
+        course4 = Course(name='Kurs C++', description='Nauka programowania w C++', first_slide=31, last_slide=40)
         db.session.add(course1)
         db.session.add(course2)
         db.session.add(course3)
@@ -99,9 +102,9 @@ def helper_cli(app):
         db.session.commit()
         app.logger.info('Dodano testowe kursy')
 
-        user_course1 = User_Course(user_id=user1.id, course_id=course1.id, percent=0.0)
-        user_course2 = User_Course(user_id=user1.id, course_id=course2.id, percent=0.0)
-        user_course3 = User_Course(user_id=user2.id, course_id=course1.id, percent=0.0)
+        user_course1 = User_Course(user_id=user1.id, course_id=course1.id)
+        user_course2 = User_Course(user_id=user1.id, course_id=course2.id)
+        user_course3 = User_Course(user_id=user2.id, course_id=course1.id)
         db.session.add(user_course1)
         db.session.add(user_course2)
         db.session.add(user_course3)

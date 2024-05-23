@@ -50,9 +50,14 @@ class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     description = db.Column(db.String(120), unique=True, nullable=False)
-    def __init__(self, name, description):
+    first_slide = db.Column(db.Integer, nullable=False)
+    last_slide = db.Column(db.Integer, nullable=False)
+
+    def __init__(self, name, description, first_slide, last_slide):
         self.name = name
         self.description = description
+        self.first_slide = first_slide
+        self.last_slide = last_slide
     def __repr__(self):
         return f'<Course: {self.name}>'
 
@@ -62,21 +67,25 @@ class User_Course(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     course_id = db.Column(db.Integer, db.ForeignKey('courses.id'), nullable=False)
-    percent = db.Column(db.Float, nullable=False)
+    slideNumber = db.Column(db.Integer, nullable=False)
 
     #kursy wpisane do usera
     user = db.relationship('User', backref=db.backref('user_courses', cascade='all, delete-orphan'))
     #userzy wpisani do kursów
     course = db.relationship('Course', backref=db.backref('user_courses', cascade='all, delete-orphan'))
 
-    def __init__(self, user_id, course_id, percent):
+    def __init__(self, user_id, course_id):
         self.user_id = user_id
         self.course_id = course_id
-        self.percent = 0
+        self.slideNumber = 0
     def __repr__(self):
         return f'<UserCourse: User {self.user_id} enrolled in Course {self.course_id}>'
 
 
+
+
+
+"""
 class Chapters(db.Model):
     __tablename__ = 'chapters'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -94,15 +103,15 @@ class Chapters(db.Model):
         return f'<Chapter: {self.name}>'
 
 
-
 class Slides(db.Model):
     __tablename__ = 'slides'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.String(1000), unique=True, nullable=False)
-    chapter_id = db.Column(db.Integer, db.ForeignKey('chapters.id'), nullable=False)
+    course_id = db.Column(db.Integer, db.ForeignKey('chapters.id'), nullable=False)
 
-    def __init__(self, content, chapter_id):
+    def __init__(self, content, course_id):
         self.content = content
-        self.chapter_id = chapter_id
+        self.course_id = course_id
     def __repr__(self):
         return f'<Slide: {self.content}>'
+"""
