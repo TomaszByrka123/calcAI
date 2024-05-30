@@ -7,7 +7,6 @@ from flask.logging import default_handler
 import logging
 from logging.handlers import RotatingFileHandler
 
-
 db = SQLAlchemy()
 login = LoginManager()
 login.login_view = 'users.login'
@@ -49,7 +48,7 @@ def create_app():
 def extentions(app):
     db.init_app(app)
     login.init_app(app)
-    from app.models import User
+    from app.models import User, Course, User_Course, Lessons
     @login.user_loader
     def load_user(id):
         return User.query.filter(User.id == int(id)).first()
@@ -81,7 +80,7 @@ def helper_cli(app):
 
     @app.cli.command('basic_user')
     def add_simple_users():
-        from .models import User, Course, User_Course
+        from .models import User, Course, User_Course, Lessons
         user1 = User(email='tomasz.byrka@alogliwice.polsl.pl', password='tomasz123', username='tombyq0')
         user2 = User(email='ktos.tam@alogliwice.polsl.pl', password='ktostam123', username='ktostam')
         db.session.add(user1)
@@ -89,18 +88,25 @@ def helper_cli(app):
         db.session.commit()
         app.logger.info('Dodano testowych userow')
 
-        #TU MUSIMY DODAC WSZYSTKIE KURSY KTÓRE DODAMY DO TEMPLATES W SLIDES I OKRESLIC KTORE SA DO JAKICH KURSÓW
-        #TRZEBA DOROBIĆ JESZCZE PODZIAŁ NA LEKCJE
-        course1 = Course(name='Kurs Pythona', description='Podstawy programowania w Pythonie', first_slide=0, last_slide=10)
-        course2 = Course(name='Kurs JavaScript', description='Nauka programowania w JavaScript', first_slide=11, last_slide=20)
-        course3 = Course(name='Kurs html', description='Nauka programowania w HTML', first_slide=21, last_slide=30)
-        course4 = Course(name='Kurs C++', description='Nauka programowania w C++', first_slide=31, last_slide=40)
+        course1 = Course(name='Kurs Pythona', description='Podstawy programowania w Pythonie')
+        course2 = Course(name='Kurs JavaScript', description='Nauka programowania w JavaScript')
+        course3 = Course(name='Kurs html', description='Nauka programowania w HTML')
+        course4 = Course(name='Kurs C++', description='Nauka programowania w C++')
         db.session.add(course1)
         db.session.add(course2)
         db.session.add(course3)
         db.session.add(course4)
         db.session.commit()
         app.logger.info('Dodano testowe kursy')
+
+        lesson1 = Lessons(name='1.1 - Dodawanie', description='Lekcja dodawania', course_id=course1.id, first_slide=0, last_slide=3)
+        lesson2 = Lessons(name='1.2 - Odejmowanie', description='Lekcja odejmowania', course_id=course1.id, first_slide=4, last_slide=7)
+        lesson3 = Lessons(name='1.3 - Mnożenie', description='Lekcja mnożenia', course_id=course1.id, first_slide=8, last_slide=10)
+        db.session.add(lesson1)
+        db.session.add(lesson2)
+        db.session.add(lesson3)
+        db.session.commit()
+        app.logger.info('Dodano testowe lekcje do kursu 1')
 
         user_course1 = User_Course(user_id=user1.id, course_id=course1.id)
         user_course2 = User_Course(user_id=user1.id, course_id=course2.id)

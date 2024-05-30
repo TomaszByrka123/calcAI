@@ -1,0 +1,55 @@
+.popup {
+    display: none;
+    position: absolute;
+    width: 300px;
+    border: 1px solid #ccc;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.popup-header {
+    padding: 10px;
+    background: #f2f2f2;
+    cursor: move;
+}
+
+.popup-header h2 {
+    margin: 0;
+    display: inline-block;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.popup-body {
+    padding: 20px;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+
+
+#display {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: right;
+    border: 1px solid #ccc;
+}
+.pop_up_btn {
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    text-align: center;
+}
