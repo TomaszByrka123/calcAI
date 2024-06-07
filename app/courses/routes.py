@@ -61,6 +61,6 @@ def lessons(lesson_id):
             Lessons.last_slide >= user_course_info.slideNumber
         )
     ).first()
-    if str(actual_lesson.id) >= str(lesson_id):
-        return redirect(url_for('courses.course', course_id=session['course_id'], lesson_id=lesson_id))
+    if actual_lesson is None or int(actual_lesson.id) >= int(lesson_id):
+        return jsonify(result='redirect', url=url_for('courses.course', course_id=session['course_id'], lesson_id=lesson_id))
     return jsonify(result='not')

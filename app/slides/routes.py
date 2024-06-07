@@ -5,6 +5,7 @@ from app import db
 from app.models import User, Course, User_Course, Lessons
 from . import slides_blueprint
 
+
 @slides_blueprint.route('/slide', methods=['GET', 'POST'])
 @login_required
 def slide():
@@ -20,13 +21,20 @@ def slide():
 
     if user_slide_number > lesson_info.last_slide:
         rendered_html = render_template('end.html')
-        return jsonify(result=rendered_html)
+        return jsonify(result=rendered_html, percent=100)
     else:
         file_name = str(int(course_id) - 1) + '/' + str(user_slide_number) + '.html'
         rendered_html = render_template(file_name)
         user_course_info.slideNumber += 1
         db.session.commit()
-        return jsonify(result=rendered_html)
+
+        # obliczanie percent
+        ile_slides = lesson_info.last_slide - lesson_info.first_slide + 2
+        ile_zrobione = min(user_course_info.slideNumber, lesson_info.last_slide + 1) - lesson_info.first_slide
+        percent = ile_zrobione / ile_slides * 100
+        print(percent)
+
+        return jsonify(result=rendered_html, percent=percent)
 
 
 @slides_blueprint.route('/all_slides', methods=['GET', 'POST'])
@@ -40,16 +48,20 @@ def all_slides():
     lesson_info = Lessons.query.filter_by(id=lesson_id).first()
 
     actual_slide = user_course_info.slideNumber
-    print(actual_slide)
     first_slide = lesson_info.first_slide
+    last_slide = lesson_info.last_slide
+
+    # obliczanie percent
+    ile_slides = lesson_info.last_slide - lesson_info.first_slide + 1
+    ile_zrobione = min(user_course_info.slideNumber, lesson_info.last_slide + 1) - lesson_info.first_slide
+    percent = ile_zrobione / ile_slides * 100
 
     html_content = ""
-    for i in range(first_slide, actual_slide):
+    for i in range(first_slide, min(actual_slide, last_slide+1)):
         file_name = str(int(course_id) - 1) + '/' + str(i) + '.html'
-        print(file_name)
         rendered_html = render_template(file_name)
         html_content += rendered_html
     if int(actual_slide) >= int(lesson_info.last_slide) + 1:
         rendered_html = render_template('end.html')
         html_content += rendered_html
-    return jsonify(result=html_content)
+    return jsonify(result=html_content, percent=percent)
